@@ -1,4 +1,4 @@
-public class Film extends DatabaseConnection {
+public class Film {
 
     public void getFilm(){
         DatabaseConnection databaseConnection = new DatabaseConnection();

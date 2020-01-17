@@ -1,4 +1,4 @@
-public class Episode extends DatabaseConnection {
+public class Episode {
 
     public void getEpisode(){
         DatabaseConnection databaseConnection = new DatabaseConnection();

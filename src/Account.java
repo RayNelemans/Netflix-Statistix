@@ -1,4 +1,4 @@
-public class Account extends DatabaseConnection{
+public class Account {
     public String name;
 
     public void getAccount(){

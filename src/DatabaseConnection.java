@@ -1,13 +1,13 @@
 import java.sql.*;
 
-public class DatabaseConnection {
+public class DatabaseConnection implements DatabaseMethods {
 
     String connectionUrl = "jdbc:sqlserver://localhost\\MSSQLSERVER;databaseName=Netflix-Statistix;integratedSecurity=true";
     Connection con = null;
     Statement stmt = null;
     ResultSet rs = null;
 
-    public void dbConnectionAccount(String SQLInput) {      //Code om data uit de tabel Account te halen
+    public void dbConnectionAccount(String SQLInput) {      //Code om data uit de tabel Account te halen van de database
 
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
