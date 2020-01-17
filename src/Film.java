@@ -2,7 +2,7 @@ public class Film extends DatabaseConnection {
 
     public void getFilm(){
         DatabaseConnection databaseConnection = new DatabaseConnection();
-        databaseConnection.DBConnection("SELECT TOP 1 * FROM Boek");
+        databaseConnection.dbConnectionFilm("SELECT TOP 10 * FROM Film");
     }
 
 
