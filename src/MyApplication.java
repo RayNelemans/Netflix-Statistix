@@ -14,13 +14,19 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLOutput;
+import java.sql.Statement;
 
 
 public class MyApplication extends Application implements DatabaseMethods {
 
     @Override
     public void start(Stage stage) throws Exception {
+
+        String connectionUrl = "jdbc:sqlserver://localhost\\MSSQLSERVER;databaseName=Netflix-Statistix;integratedSecurity=true";
+        ResultSet rs = null;
 
         DatabaseConnection databaseConnection = new DatabaseConnection();
         Film film = new Film();
@@ -32,12 +38,11 @@ public class MyApplication extends Application implements DatabaseMethods {
         Menu menu2 = new Menu("Leeftijd");
         Button button = new Button("test");
 
-        button.setOnAction(actionEvent -> film.getFilm());
-
-
-
-
-
+        button.setOnAction((event) -> {
+            ContentDisplay contentDisplay = film.getFilm();
+            label2.setContentDisplay(contentDisplay);
+            label2.setText(String.valueOf(contentDisplay));
+        });
 
 
         MenuBar mb = new MenuBar();
@@ -50,7 +55,8 @@ public class MyApplication extends Application implements DatabaseMethods {
         label1.setFont(new Font("Cambria", 32));               // Styling voor label1.
         mb.setStyle("-fx-background-color:RED");
 
-        VBox vBox = new VBox(label1, mb, label2, button);
+        VBox vBox = new VBox(label1, mb, button, label2);
+        vBox.setStyle("-fx-background-color:RED");
 
 
         Scene mainView = new Scene(vBox, 1344, 756);        //Zodat als je uit vollegdig scherm gaat de applicatie window niet heel klein is.
@@ -95,3 +101,4 @@ public class MyApplication extends Application implements DatabaseMethods {
 
     }
 }
+

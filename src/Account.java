@@ -1,5 +1,9 @@
 public class Account {
-    public String name;
+    public int AccountID;
+
+    public int getAccountID() {
+        return AccountID;
+    }
 
     public void getAccount(){
         DatabaseConnection databaseConnection = new DatabaseConnection();
