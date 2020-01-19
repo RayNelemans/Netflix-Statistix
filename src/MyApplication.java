@@ -37,11 +37,15 @@ public class MyApplication extends Application implements DatabaseMethods {
         Menu menu = new Menu("Menu");
         Menu menu2 = new Menu("Leeftijd");
         Button button = new Button("test");
+        TextField textField = new TextField();
+        TableView tableView = new TableView();
+        TableView tableView1 = new TableView();
 
         button.setOnAction((event) -> {
             ContentDisplay contentDisplay = film.getFilm();
             label2.setContentDisplay(contentDisplay);
             label2.setText(String.valueOf(contentDisplay));
+
         });
 
 
@@ -55,7 +59,7 @@ public class MyApplication extends Application implements DatabaseMethods {
         label1.setFont(new Font("Cambria", 32));               // Styling voor label1.
         mb.setStyle("-fx-background-color:RED");
 
-        VBox vBox = new VBox(label1, mb, button, label2);
+        VBox vBox = new VBox(label1, mb, button, label2, tableView, tableView1, borderPane);
         vBox.setStyle("-fx-background-color:RED");
 
 

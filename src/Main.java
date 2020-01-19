@@ -8,7 +8,7 @@ public class Main{
         launch(MyApplication.class);
 
 
-        /*Film film = new Film();
+        Film film = new Film();
         film.getFilm();
         Account account = new Account();
         account.getAccount();
@@ -21,7 +21,7 @@ public class Main{
         User user = new User();
         user.getUser();
         Series series = new Series();
-        series.getSeries();*/
+        series.getSeries();
 
 
 
